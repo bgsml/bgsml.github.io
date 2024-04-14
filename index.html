@@ -1,7 +1,417 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE HTML>
+<!--
+    Photon by HTML5 UP
+    html5up.net
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<style>
+	.videoResponsive {
+		padding-bottom:56.25%;
+	  height:0;
+	  position:relative;
+		padding-top:30px;
+		overflow:hidden;
+	}
+	.videoResponsive iframe, 
+	.videoResponsive object, 
+	.videoResponsive embed {
+		position:absolute;
+		left:0;
+	  top:0;
+		width:100%;
+		height:100%;
+	}
+</style>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Engineering House</title>
+
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="Content/Site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83915670-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        var x, n = 0, rotINT
+        var vel = 0;
+        function rotateLogo()
+        {
+            vel = vel + 1.5 / (vel + 1);
+            x=document.getElementById("rotate")
+            clearInterval(rotINT)
+            rotINT = setInterval("startRotate()", 3)
+        }
+        function startRotate()
+        {
+            //n = n + 1
+            //if (n >= 45) {
+            //    clearInterval(rotINT)
+            //    n = 0;
+            //}
+
+            //var k = n / 45.0
+            //k = - k * k * (2 * k - 3) * 45
+
+            n = (n + vel) % 360;
+            var k = n;
+            vel -= 0.0075;
+
+            if (vel < 0)
+                clearInterval(rotINT)
+
+            x.style.transform="rotate(" + k + "deg)"
+            x.style.webkitTransform="rotate(" + k + "deg)"
+            x.style.OTransform="rotate(" + k + "deg)"
+            x.style.MozTransform = "rotate(" + k + "deg)"
+        }
+    </script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo" onmouseover="rotateLogo()">
+                        <div id="center" style="background-image: url('./images/LogoInside.png')"></div>
+                        <div id="rotate" style="background-image: url('./images/LogoOutside.png')"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Membership.html">Membership</a></li>
+                            <li><a href="VirtualTour.html">Virtual Tour</a></li>
+                            <li><a href="Leadership.html">Leadership</a></li>
+							<li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ImagineRIT.html">ImagineRIT</a></li>
+                            <li><a href="PublicRelations.html">Public Relations</a></li>
+                            <li><a href="Calendar.html">Calendar</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section id="header">
+        <div class="inner">
+            <img src="images/LogoIcon.png" />
+            <h1>
+                Welcome to Engineering House
+            </h1>
+            <p>
+                Building foundations that last a lifetime.
+            </p>
+        </div>
+		
+		<br />
+		<br />
+		
+		<div class="inner">
+            <header>
+                <h3>Are you interested in learning more about Engineering House?</h3>
+            </header>
+            <p>
+                If so, email <a href="mailto:ehouserecruitment@gmail.com">ehouserecruitment@gmail.com</a> for virtuial shadowing and info-session opportunities.<br>You can also sign up <a href="https://www.signupgenius.com/go/9040B4FAAAD2AA7F94-engineering">here</a> for a virtual tour and to meet current members.
+            </p>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style1 special">
+        <div class="container">
+            <header class="major">
+                <h2>We Are Engineering House</h2>
+            </header>
+            <p>Engineering House is a Special Interest House that promotes collaboration and support for engineering students. We build projects for Imagine RIT, create support networks for class work, and promote a strong family atmosphere. Established in 1971, we have a large range of alumni to support us. Currently, Engineering House is located on the top floor of Fredericka Douglass Sprague Hall, DSP (formerly Nathaniel Rochester Hall, NRH).</p>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+<!--
+                <ol class="carousel-indicators hidden-xs">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+-->
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/Slideshow/1.jpg">
+                        <p><strong>Hammocks and Donuts in the NRH Quad</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/2.jpg">
+                        <p><strong>Skiing Trip</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/3.jpg">
+                        <p><strong>Engineering House Formal</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/4.jpg">
+                        <p><strong>Alumni Barbeque</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/5.jpg">
+                        <p><strong>Mud Tug</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/6.jpg">
+                        <p><strong>Beach Day</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/7.jpeg">
+                        <p><strong>The Rock</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/8.jpg">
+                        <p><strong>Amazing Maize Maze</strong></p>
+                    </div>
+                    <div class="item">
+                        <img src="images/Slideshow/9.jpg">
+                        <p><strong>Gingerbread House Contest</strong></p>
+                    </div>
+                </div>
+                
+                
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="main style2">
+        <div class="container">
+            <div class="row 150%">
+                <div class="6u 12u$(medium) hidden-sm hidden-xs">
+                    <ul class="major-icons">
+                        <li>
+                            <a href="PublicRelations.html">
+                                <div class="echo"><span title="Public Relations" class="icon style1 major fa-heart"></span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Leadership.html">
+                                <div class="echo"><span title="Leadership" class="icon style2 major fa-cogs"></span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Calendar.html">
+                                <div class="echo"><span title="Calendar" class="icon style3 major fa-calendar"></span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Membership.html">
+                                <div class="echo"><span title="Membership" class="icon style4 major fa-users"></span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ImagineRIT.html">
+                                <div class="echo"><span title="ImagineRIT" class="icon style5 major fa-wrench"></span></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="VirtualTour.html">
+                                <div class="echo"><span title="Virtual Tour" class="icon style6 major fa-map-marker"></span></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="6u$ 12u$(medium)">
+                    <header class="major">
+                        <h2>
+                            Who We Are
+                        </h2>
+                    </header>
+                    <p>Engineering studies at RIT are demanding, but you will find that you could have a significant advantage by living in Engineering House. We promote team-building and encourage members to work together to accomplish goals. Our theatre area provides everything needed to relax and our workshop is a nice open space to work on what you please.</p>
+                    <p>Our strong family atmosphere allows us to work together to complete projects, sponsor events, and participate in many exclusive activities throughout the year, including movie nights, athletic events, intramural sports, house trips, community service, and much more.</p>
+                </div>
+            </div>
+			<div class="videoResponsive">
+				<p style="text-align:center">
+					<h2 style="text-align:center"><strong>Video Introduction</strong></h2>
+					<iframe width="1280" height="720" src="https://www.youtube.com/embed/HQp95nqC4uU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</p>
+			</div>
+        </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="main style1 special">
+        <div class="container">
+            <header class="major">
+                <h2>ImagineRIT Projects</h2>
+            </header>
+            <p>Every year, RIT hosts the ImagineRIT festival to showcase the innovative and creative spirit of RIT students, faculty and staff. Engineering House consistently participates in the festival, getting together in groups to create projects that combine engineering skills and ingenuity.</p>
+
+            <ul class="actions">
+                <li><a href="ImagineRIT.html" class="button">View Projects</a></li>
+            </ul>
+
+            <br />
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="ImagineRIT.html#MAME">
+                        <div class="tile style1"><img src="images/ImagineRIT/mame.png" /><div><span>M.A.M.E.</span></div></div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="ImagineRIT.html#chainreaction">
+                        <div class="tile style2"><img src="images/ImagineRIT/chainreaction.jpg" /><div><span>Chain Reaction</span></div></div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="ImagineRIT.html#theremin">
+                        <div class="tile style3"><img src="images/ImagineRIT/Theremin.jpg" /><div><span>E2-H2<br />Star Wars Theremin</span></div></div>
+                    </a>
+                </div>
+            </div>
+            <br />
+        </div>
+    </section>
+
+    <!-- Four -->
+    <section id="four" class="main style2 special thick">
+        <div class="container">
+            <header>
+                <h2>Want to be a Member?</h2>
+            </header>
+            <ul class="actions uniform">
+                <li><a href="Membership.html" class="button special">How to Join</a></li>
+                <li><a href="VirtualTour.html" class="button">Take a Virtual Tour</a></li>
+            </ul>
+            <header>
+                <h4>Virtual Shadowing</h4>
+            </header>
+            <p>Amidst the current pandemic, incoming freshmen can meet and talk to current Engineering House members via a virtuial meeting on Zoom. We'd love to meet you and answer any questions you have. Feel free to email <a href="mailto: ehouserecruitment@gmail.com">ehouserecruitment@gmail.com</a> to set up a meeting or if you have any issues or questions.</p>
+            <ul class="actions" style="text-align:center">
+                <li><a href="FAQ.html" class="button special">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="five" class="main style1 special profiles">
+        <div class="container">
+            <header class="major">
+                <h2>Important People</h2>
+            </header>
+            <p>Here are a few of the people that make Engineering House possible. Click on their picture to learn more about who they are, and what they do.</p>
+
+            <br />
+
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-0 col-sm-offset-1 col-sm-5 col-md-offset-2 col-lg-offset-0 col-md-4 col-lg-3">
+                    <a href="Leadership.html"><div class="profile-pic" style="background-image: url('images/People/president.jpg')"></div></a>
+                    <header>
+                        <h3>President</h3>
+                        <p>Tianna Seitz</p>
+                    </header>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <a href="Leadership.html"><div class="profile-pic" style="background-image: url('images/People/vice-president.jpg')"></div></a>
+                    <header>
+                        <h3>Vice President</h3>
+                        <p>Alex Klimecky</p>
+                    </header>
+                </div>
+                <div class="col-xs-6 col-xs-offset-0 col-sm-offset-1 col-sm-5 col-md-offset-2 col-lg-offset-0 col-md-4 col-lg-3">
+                    <a href="Leadership.html"><div class="profile-pic" style="background-image: url('images/People/treasurer.jpg')"></div></a>
+                    <header>
+                        <h3>Treasurer</h3>
+                        <p>Alyssa Troidl</p>
+                    </header>
+                </div>
+                <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                    <a href="Leadership.html"><div class="profile-pic" style="background-image: url('images/People/secretary.jpg')"></div></a>
+                    <header>
+                        <h3>Secretary</h3>
+                        <p>Caitlyn Miller</p>
+                    </header>
+                </div>
+            </div>
+
+            <br />
+
+            <ul class="actions">
+                <li><a href="Leadership.html" class="button">All Leadership Positions</a></li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a></li>
+            <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span class="label">@RITEHouse</span></a></li>
+            <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span class="label">rit_ehouse</span></a></li>
+            <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span class="label">ehouserecruitment@gmail.com</span></a></li>
+        </ul>
+        <div class="copyright">
+            &copy; Engineering House 2020
+            <br />
+            Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

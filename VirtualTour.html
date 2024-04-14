@@ -1,0 +1,178 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Photon by HTML5 UP
+    html5up.net
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Virtual Tour</title>
+
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="Content/Site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83915670-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        var x, n = 0, rotINT
+        var vel = 0;
+        function rotateLogo()
+        {
+            vel = vel + 1.5 / (vel + 1);
+            x=document.getElementById("rotate")
+            clearInterval(rotINT)
+            rotINT = setInterval("startRotate()", 3)
+        }
+        function startRotate()
+        {
+            //n = n + 1
+            //if (n >= 45) {
+            //    clearInterval(rotINT)
+            //    n = 0;
+            //}
+
+            //var k = n / 45.0
+            //k = - k * k * (2 * k - 3) * 45
+
+            n = (n + vel) % 360;
+            var k = n;
+            vel -= 0.0075;
+
+            if (vel < 0)
+                clearInterval(rotINT)
+
+            x.style.transform="rotate(" + k + "deg)"
+            x.style.webkitTransform="rotate(" + k + "deg)"
+            x.style.OTransform="rotate(" + k + "deg)"
+            x.style.MozTransform = "rotate(" + k + "deg)"
+        }
+    </script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo" onmouseover="rotateLogo()">
+                        <div id="center" style="background-image: url('./images/LogoInside.png')"></div>
+                        <div id="rotate" style="background-image: url('./images/LogoOutside.png')"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Membership.html">Membership</a></li>
+                            <li><a href="VirtualTour.html">Virtual Tour</a></li>
+                            <li><a href="Leadership.html">Leadership</a></li>
+							<li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ImagineRIT.html">ImagineRIT</a></li>
+                            <li><a href="PublicRelations.html">Public Relations</a></li>
+                            <li><a href="Calendar.html">Calendar</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="one" class="main style1">
+        <div class="container">
+            <header>
+                <h2 class="text-center">Virtual Tour</h2>
+            </header>
+            <p>View Engineering House from your computer! Here are some 360&deg; views of all the lounges, plus a dorm room. Click on a room below to view it.</p>
+            <div id="map">
+                <!-- Room Buttons -->
+                <div style="width:63px;height:72px; margin-top:18px; margin-left:19px;" class="roomButton" input="" type="button" onclick="window.open('https://goo.gl/maps/Suj9Kiy97zF2')" value="View the VAX Workshop"></div>
+                <div style="width:63px;height:72px; margin-top:93px; margin-left:19px;" class="roomButton" input="" type="button" onclick="window.open('https://goo.gl/maps/7CTcKvnXoCs')" value="View the VAX Theater"></div>
+                <div style="width:59px;height:60px; margin-top:105px; margin-left:198px;" class="roomButton" input="" type="button" onclick="window.open('https://goo.gl/maps/1JLv5JpdVBn')" value="View the Study Lounge"></div>
+                <div style="width:59px;height:60px; margin-top:105px; margin-left:369px;" class="roomButton" input="" type="button" onclick="window.open('https://goo.gl/TqmmKP')" value="View the Kitchen"></div>
+                <div style="width:60px;height:60px; margin-top:105px; margin-left:540px;" class="roomButton" input="" type="button" onclick="window.open('https://goo.gl/maps/UiAX5xRPqTNfWD8L8')" value="View the Pool Lounge"></div>
+                <div style="width:25px;height:60px; margin-top:105px; margin-left:300px;" class="roomButton" input="" type="button" onclick="window.open('http://goo.gl/zrYYqJ')" value="View a Room"></div>
+
+                <img id="floormap" src="images/eh-floormap.png">
+
+            </div>
+
+            <div class="title" style="font-size:24px; text-align:left; margin-left:48px; margin-top:18px;">Key:</div>
+            <div class="title" style="font-size:18px; text-align:left; margin-left:48px;">1 - VAX (workshop area)<br>2 - VAX (seating area)<br>3 - Study Lounge<br>4 - Kitchen<br>5 - Pool Lounge</div>
+        </div>
+        <div class="container">
+
+        </div>
+    </section>
+    <section id="two" class="main style1 special thick">
+        <div class="container">
+            <header>
+                <h3>Like What You See?</h3>
+            </header>
+            <ul class="actions">
+                <li><a href="Membership.html" class="button special">How to Join</a></li>
+                <li><a href="index.html" class="button">Back to Home</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a></li>
+            <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span class="label">@RITEHouse</span></a></li>
+            <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span class="label">rit_ehouse</span></a></li>
+            <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span class="label">ehouserecruitment@gmail.com</span></a></li>
+        </ul>
+        <div class="copyright">
+            &copy; Engineering House 2020
+            <br />
+            Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

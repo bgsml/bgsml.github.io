@@ -1,0 +1,301 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Photon by HTML5 UP
+    html5up.net
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <title>Imagine RIT</title>
+
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="Content/Site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83915670-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        var x, n = 0, rotINT
+        var vel = 0;
+        function rotateLogo()
+        {
+            vel = vel + 1.5 / (vel + 1);
+            x=document.getElementById("rotate")
+            clearInterval(rotINT)
+            rotINT = setInterval("startRotate()", 3)
+        }
+        function startRotate()
+        {
+            //n = n + 1
+            //if (n >= 45) {
+            //    clearInterval(rotINT)
+            //    n = 0;
+            //}
+
+            //var k = n / 45.0
+            //k = - k * k * (2 * k - 3) * 45
+
+            n = (n + vel) % 360;
+            var k = n;
+            vel -= 0.0075;
+
+            if (vel < 0)
+                clearInterval(rotINT)
+
+            x.style.transform="rotate(" + k + "deg)"
+            x.style.webkitTransform="rotate(" + k + "deg)"
+            x.style.OTransform="rotate(" + k + "deg)"
+            x.style.MozTransform = "rotate(" + k + "deg)"
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo" onmouseover="rotateLogo()">
+                        <div id="center" style="background-image: url('./images/LogoInside.png')"></div>
+                        <div id="rotate" style="background-image: url('./images/LogoOutside.png')"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="navbar" class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Membership.html">Membership</a></li>
+                            <li><a href="VirtualTour.html">Virtual Tour</a></li>
+                            <li><a href="Leadership.html">Leadership</a></li>
+							<li><a href="FAQ.html">FAQ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ImagineRIT.html">ImagineRIT</a></li>
+                            <li><a href="PublicRelations.html">Public Relations</a></li>
+                            <li><a href="Calendar.html">Calendar</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="one" class="main style1">
+        <div class="container">
+            <header class="major">
+                <h2>ImagineRIT</h2>
+            </header>
+            <p>Every year, RIT hosts the ImagineRIT festival to showcase the innovative and creative spirit of RIT students, faculty and staff. Engineering House consistently participates in the festival, getting together in groups to create projects that combine engineering skills and ingenuity.</p>
+        </div>
+    </section>
+    <section id="two" class="main style2">
+        <div class="container">
+            
+            <section id="Giant3DPrint">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/giant3dprinter.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>Giant 3D Printer</h3>
+                            <p>Hunter Leonard, </p>
+                        </header>
+                        <p>Started in the Fall of 2018, the goal of this project was to build a giant 3D printer that also doubles as a laser engraver and CNC router. Features include:
+                            <li>600mm x 1500mm x 500mm Build Area</li>
+                            <li>Heated aluminum bed</li>
+                            <li>OctoPrint remote server control</li>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="PowerSeries">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/powerseries.png" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>Power Series Race Car</h3>
+                            <p>Hunter Leonard, Emerson Maloney, Gillian Doolittle, Dustin Fisher, Matthew Martinelli</p>
+                        </header>
+                        <p>The purpose of the Power Series Racing is to modify a kid’s electric toy to race around a track and impress the crowd for a maximum of 500$. Makerspaces, Hackerspaces, highschools and colleges all jump in on the fun and build their masterpieces to race around a track at high speeds and wear funny costumes/have funny cars to impress the crowd for bonus Moxie points. These races happen at many Makerfaires around the country and we did quite well for our first race ever down in Queens, NY.</p>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="MAME">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/mame.png" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>MAME: Multiple Arcade Machine Emulator</h3>
+                            <p>Jason Blocklove, Christian Kobb, Chris Salcedo, Chris Sweet, Scott Williamson, Joseph Panaro, Emerson Maloney, Maria Melchiorre, Daniel Green</p>
+                        </header>
+                        <p>"The MAME" is a new take on the old style arcade cabinets from 70's and 80's. It can play games from real arcade cabinets all the way through Nintendo 64 titles. And with lights and sounds like those of cabinets from the 70's and 80's, it will truly feel like going back in time.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chainreaction">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/chainreaction.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>Chain Reaction</h3>
+                            <p>Noah Lach, Elizabeth Belfast, Andrew Frost, Gavin Hawkes, Emerson Maloney, Daniel Green, Logan Hobbs, Brendan Mendonca, Jarrett Pischera, Brett Saxe, Adam Stock</p>
+                        </header>
+                        <p>This giant chain reaction machine is a complex structure involving balls rolling down ramps, funnels, levers, and other physics-oriented mechanisms. Balls are deposited into the top of the structure and simultaneously directed through numerous paths comprised of these mechanisms towards the bottom of the machine.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="racecars">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/racecars.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>Race Cars for Kids!</h3>
+                            <p>Madison Langer, Sarah Ehrhardt, Alyssa Keller, Maria Melchiorre, Cole Miller, Kimberly Bernetski, Daniel Green, Morgan Kline, Rachel Becker</p>
+                        </header>
+                        <p>Construct, decorate, race, and learn all about what will make your wooden car go fast!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="theremin">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/Theremin.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>E2-H2: A Star Wars Theremin</h3>
+                            <p>Scott Williamson, Brighton Key, Maria Melchiorre, Kimberly Bernetski, Carley Warlick, Daniel Green</p>
+                        </header>
+                        <p>E2-H2: A theremin redesigned to resemble a droid from Star Wars. The theremin is an early electronic musical instrument controlled without physical contact by the thereminist. It is named after the Westernized name of its Russian inventor, Léon Theremin, who patented the device in 1928. (Source: Wikipedia)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rubens">
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="tile-simple">
+                            <img src="images/ImagineRIT/rubens.png" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 imagine-text">
+                        <header>
+                            <h3>Ruben's Tube</h3>
+                            <p>Vinny D'Arrigo, Adam Stock, Adam Bork, Gordon Upshaw, Daniel Green</p>
+                        </header>
+                        <p>A pipe that allows propane to escape through holes drilled at even intervals on the top and lit. On the end of the pipe that does not have the inflow of the propane, is a speaker that plays a sound wave into the pipe. This causes the propane to form areas of high and low pressure. These pressure areas change the height of the flame coming out of the pipe. The outcome is the flames match the sine form of the sound wave, allowing the user to see a standing sound wave.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section id="three" class="main style1 special thick">
+        <div class="container">
+            <header>
+                <h3>Like What You See?</h3>
+            </header>
+            <ul class="actions">
+                <li><a href="Membership.html" class="button special">How to Join</a></li>
+                <li><a href="index.html" class="button">Back to Home</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <ul class="icons">
+            <li><a href="https://twitter.com/RIT_Ehouse" target="_blank" class="icon alt fa-twitter"><span class="label">@RIT_Ehouse</span></a></li>
+            <li><a href="https://www.facebook.com/RITEHouse/" target="_blank" class="icon alt fa-facebook"><span class="label">@RITEHouse</span></a></li>
+            <li><a href="https://www.instagram.com/rit_ehouse/" target="_blank" class="icon alt fa-instagram"><span class="label">rit_ehouse</span></a></li>
+            <li><a href="mailto: ehouserecruitment@gmail.com" target="_blank" class="icon alt fa-envelope"><span class="label">ehouserecruitment@gmail.com</span></a></li>
+        </ul>
+        <div class="copyright">
+            &copy; Engineering House 2020
+            <br />
+            Design: <a href="http://html5up.net">HTML5 UP</a> &amp; Anthony Edvalson
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
